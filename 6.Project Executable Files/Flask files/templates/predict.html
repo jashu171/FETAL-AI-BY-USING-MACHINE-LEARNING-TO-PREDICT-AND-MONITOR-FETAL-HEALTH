@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetal Checkup</title>
+    
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('https://example.com/background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            background: rgba(178, 233, 202, 0.8);
+            border: 2px solid #000000;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1200px;
+            box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+            color: #fa3f3f;
+        }
+        .conditions {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #00BFFF;
+            border-radius: 5px;
+            background-color: #f0f8ff;
+        }
+        .conditions h2 {
+            text-align: center;
+            margin: 0;
+            color: #333;
+        }
+        .inputs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .input-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        .input-group input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .submit-btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .submit-btn button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #00BFFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .submit-btn button:hover {
+            background-color: #009acd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fetal Health CheckUp</h1>
+        <div class="conditions">
+            <h2>FETAL HEALTH</h2>
+        </div>
+    <form action="/output" method="POST">
+        <div class="inputs">
+            <div class="input-group">
+                <label for="text1">prolongued_decelerations </label>
+                <input type="number" id="text1" placeholder="Enter number">
+            </div>
+            <div class="input-group">
+                <label for="text2">histrogram_variance</label>
+                <input type="number" id="text2" placeholder="Enter number">
+            </div>
+            <div class="input-group">
+                <label for="text3">histogram_mode</label>
+                <input type="number" id="text3" placeholder="Enter number">
+            </div>
+            <div class="input-group">
+                <label for="text4">abnormal_short_term_variability</label>
+                <input type="number" id="text4" placeholder="Enter number">
+            </div>
+            <div class="input-group">
+                <label for="text5">histogram_median/label>
+                <input type="number" id="text5" placeholder="Enter number">
+            </div>
+            <div class="input-group">
+                <label for="text6">accelerations</label>
+                <input type="number" id="text6" placeholder="Enter number">
+            </div>
+            <div class="input-group">
+                <label for="text7">percentage_of_time_with_abnormal_long_term_variability</label>
+                <input type="number" id="text7" placeholder="Enter number">
+            </div>
+            <div class="input-group">
+                <label for="text8">mean_value_of_long_term_variability</label>
+                <input type="number" id="text8" placeholder="Enter number">
+            </div>
+        </div>
+        <div class="submit-btn">
+                <button type="submit">SUBMIT</button>
+        </div>
+    </form>
+    </div>
+</body>
+</html>

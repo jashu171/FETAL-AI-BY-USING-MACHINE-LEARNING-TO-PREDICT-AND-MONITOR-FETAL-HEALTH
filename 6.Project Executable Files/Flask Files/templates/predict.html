@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetal Checkup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150vh;
+            margin: 0;
+            background: url('https://example.com/background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            background: rgba(178, 233, 202, 0.8);
+            border: 2px solid #000000;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1200px;
+            box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+            color: #fa3f3f;
+        }
+        .conditions {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #00BFFF;
+            border-radius: 5px;
+            background-color: #f0f8ff;
+        }
+        .conditions h2 {
+            text-align: center;
+            margin: 0;
+            color: #333;
+        }
+        .inputs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .input-group label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        .input-group input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .submit-btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .submit-btn button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #00BFFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .submit-btn button:hover {
+            background-color: #009acd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fetal Health CheckUp</h1>
+        <div class="conditions">
+            <h2>FETAL HEALTH</h2>
+        </div>
+        <form action="{{ url_for('output') }}" method="POST">
+            <div class="inputs">
+                <div class="input-group">
+                    <label for="baseline_value">Baseline Value:</label>
+                    <input type="number" id="baseline_value" name="baseline_value" placeholder="Enter lessthan 200 ">
+                </div>
+                <div class="input-group">
+                    <label for="accelerations">Accelerations:</label>
+                    <input type="number" id="accelerations" name="accelerations" placeholder="Enter lessthan 100">
+                </div>
+                <div class="input-group">
+                    <label for="fetal_movement">Fetal Movement:</label>
+                    <input type="number" id="fetal_movement" name="fetal_movement" placeholder="Enter lessthan 100">
+                </div>
+                <div class="input-group">
+                    <label for="uterine_contractions">Uterine Contractions:</label>
+                    <input type="number" id="uterine_contractions" name="uterine_contractions" placeholder="Enter lessthan 100">
+                </div>
+                <div class="input-group">
+                    <label for="light_decelerations">Light Decelerations:</label>
+                    <input type="number" id="light_decelerations" name="light_decelerations" placeholder="Enter lessthan 100">
+                </div>
+                <div class="input-group">
+                    <label for="severe_decelerations">Severe Decelerations:</label>
+                    <input type="number" id="severe_decelerations" name="severe_decelerations" placeholder="Enter lessthan 100">
+                </div>
+                <div class="input-group">
+                    <label for="prolongued_decelerations">Prolongued Decelerations:</label>
+                    <input type="number" id="prolongued_decelerations" name="prolongued_decelerations" placeholder="Enter lessthan 100">
+                </div>
+                <div class="input-group">
+                    <label for="abnormal_short_term_variability">Abnormal Short Term Variability:</label>
+                    <input type="number" id="abnormal_short_term_variability" name="abnormal_short_term_variability" placeholder="Enter lessthan 100">
+                </div>
+                <div class="input-group">
+                    <label for="mean_value_of_short_term_variability">Mean Value of Short Term Variability:</label>
+                    <input type="number" id="mean_value_of_short_term_variability" name="mean_value_of_short_term_variability" placeholder="Enter lessthan 100">
+                </div>
+                <div class="input-group">
+                    <label for="percentage_of_time_with_abnormal_long_term_variability">Percentage of Time with Abnormal Long Term Variability:</label>
+                    <input type="number" id="percentage_of_time_with_abnormal_long_term_variability" name="percentage_of_time_with_abnormal_long_term_variability" placeholder="Enter lessthan 100 ">
+                </div>
+                <div class="input-group">
+                    <label for="mean_value_of_long_term_variability">Mean Value of Long Term Variability:</label>
+                    <input type="number" id="mean_value_of_long_term_variability" name="mean_value_of_long_term_variability" placeholder="Enter lessthan 100">
+                </div>
+                <div class="input-group">
+                    <label for="histogram_width">Histogram Width:</label>
+                    <input type="number" id="histogram_width" name="histogram_width" placeholder="Enter lessthan 60">
+                </div>
+                <div class="input-group">
+                    <label for="histogram_min">Histogram Min:</label>
+                    <input type="number" id="histogram_min" name="histogram_min" placeholder="Enter lessthan 100">
+                </div>
+                <div class="input-group">
+                    <label for="histogram_max">Histogram Max:</label>
+                    <input type="number" id="histogram_max" name="histogram_max" placeholder="Enter lessthan 200">
+                </div>
+                <div class="input-group">
+                    <label for="histogram_number_of_peaks">Histogram Number of Peaks:</label>
+                    <input type="number" id="histogram_number_of_peaks" name="histogram_number_of_peaks" placeholder="Enter lessthan 100">
+                </div>
+                <div class="input-group">
+                    <label for="histogram_number_of_zeroes">Histogram Number of Zeroes:</label>
+                    <input type="number" id="histogram_number_of_zeroes" name="histogram_number_of_zeroes" placeholder="Enter lessthan 200">
+                </div>
+                <div class="input-group">
+                    <label for="histogram_mode">Histogram Mode:</label>
+                    <input type="number" id="histogram_mode" name="histogram_mode" placeholder="Enter lessthan 200">
+                </div>
+                <div class="input-group">
+                    <label for="histogram_mean">Histogram Mean:</label>
+                    <input type="number" id="histogram_mean" name="histogram_mean" placeholder="Enter lessthan 200">
+                </div>
+                <div class="input-group">
+                    <label for="histogram_median">Histogram Median:</label>
+                    <input type="number" id="histogram_median" name="histogram_median" placeholder="Enter lessthan 100">
+                </div>
+                <div class="input-group">
+                    <label for="histogram_variance">Histogram Variance:</label>
+                    <input type="number" id="histogram_variance" name="histogram_variance" placeholder="Enter lessthan 100">
+                </div>
+                <div class="input-group">
+                    <label for="histogram_tendency">Histogram Tendency:</label>
+                    <input type="number" id="histogram_tendency" name="histogram_tendency" placeholder="Enter lessthan 100">
+                </div>
+            </div>
+            <div class="submit-btn">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
